@@ -3,6 +3,8 @@ import { Gastronomia } from "./pages/Gastronomia";
 import { Cultura } from "./pages/Cultura";
 import { Arte } from "./pages/Arte";
 import { Contacto } from "./pages/Contacto";
+import { Products } from "./pages/Products";
+import { ProductGrid } from "./pages/ProductGrid";
 import "./sass/index.scss";
 import {
   createBrowserRouter,
@@ -34,6 +36,16 @@ function App() {
     {
       path: "/contacto",
       element: <Contacto />,
+    },
+
+    {
+      path: "/product",
+      element: <Products />,
+    },
+
+    {
+      path: "/productgrid",
+      element: <ProductGrid />,
     },
   ]);
 

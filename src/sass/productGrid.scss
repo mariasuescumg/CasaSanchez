@@ -1,0 +1,36 @@
+.category {
+  &-grid {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5% 25%;
+    width: 100%;
+    gap: 10%;
+  }
+
+  &-card{
+    width:45%;
+    position: relative;
+
+    &-img{
+        width: 100%;
+   
+        
+    }
+   
+  }
+ 
+  &-agg{
+    border-radius: 50%;
+    color: $blanco;
+    background-color: $vino;
+    border: none;
+    width: 5%;
+    height: 5%;
+    position: absolute;
+    top: 2%;
+    right: 5%;
+
+  }
+  
+
+}
