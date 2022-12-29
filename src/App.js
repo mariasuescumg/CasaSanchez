@@ -5,6 +5,7 @@ import { Arte } from "./pages/Arte";
 import { Contacto } from "./pages/Contacto";
 import { Products } from "./pages/Products";
 import { ProductGrid } from "./pages/ProductGrid";
+import { Card } from "./pages/Card";
 import "./sass/index.scss";
 import {
   createBrowserRouter,
@@ -46,6 +47,10 @@ function App() {
     {
       path: "/productgrid",
       element: <ProductGrid />,
+    },
+    {
+      path: "/card",
+      element: <Card />,
     },
   ]);
 
