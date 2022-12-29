@@ -1,0 +1,37 @@
+.header{
+  display: flex;
+  align-items: center;
+  padding: 25px 50px;  
+  
+  @media (max-width:750px) {
+    display: none;
+  }
+
+  &-logo {
+    width: 10%;
+  }
+
+  &-nav {
+
+    width: 80%;
+    display: flex;
+    justify-content: center;
+
+    &-list {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+      border-bottom: $negro solid 1px;
+      padding-bottom: 10px;
+      
+    }
+
+    &-items {
+      cursor: pointer;
+    }
+  }
+
+  &-cart {
+    width: 10%;
+  }
+}

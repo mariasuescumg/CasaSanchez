@@ -1,0 +1,45 @@
+.collage {
+  &-item {
+    display: flex;
+    height: 300px;
+  }
+
+  &-img {
+    width: 50%;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-text {
+    width: 50%;
+    text-align: left;
+    padding: 30px 30px;
+    color: $blanco;
+
+    & h3 {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.welcome {
+  text-align: center;
+
+  & h1 {
+  }
+}
+
+.slider {
+  &-swiper{
+    height:412px;
+  }
+  &-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

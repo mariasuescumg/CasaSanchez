@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+    padding: 25px 50px;  
+
+}
+html {
+  font-size: 16px;
+}
+
+.text {
+  &-xl {
+    font-size: 50px;
+  }
+  &-l {
+    font-size: 48px;
+  }
+  &-m {
+    font-size: 20px;
+  }
+  &-s {
+    font-size: 15px;
+  }
+  &-xs {
+    font-size: 12px;
+  }
+
+  &-bold {
+    &-400 {
+      font-weight: 400px;
+    }
+
+    &-500 {
+      font-weight: 500px;
+    }
+
+    &-600 {
+      font-weight: 600px;
+    }
+
+    &-700 {
+      font-weight: 700px;
+    }
+    &-800 {
+      font-weight: 800px;
+    }
+  }
+}
+
+.background {
+  &-amarillo {
+    background-color: $amarillo;
+  }
+  &-vino {
+    background-color: $vino;
+  }
+  &-rosado {
+    background-color: $rosado;
+  }
+  &-gris {
+    background-color: $gris;
+  }
+  &-verde {
+    background-color: $verde;
+  }
+}
