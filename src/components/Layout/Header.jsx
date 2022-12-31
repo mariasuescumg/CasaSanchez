@@ -54,12 +54,17 @@ export const Header = () => {
             </li>
           </ul>
         </div>
-        <div className="header-cart">
+        <div
+          onClick={() => {
+            navigate("/cart");
+          }}
+          className="header-cart"
+        >
           <FontAwesomeIcon icon={faShoppingCart} />
         </div>
       </header>
-      
-   {/*<sidebar>
+
+      {/*<sidebar>
         <div className="logomobile">
           <img src={LogoCS} alt="" />
         </div>
@@ -68,6 +73,5 @@ export const Header = () => {
         </div>
       </sidebar>*/}
     </>
-
   );
 };

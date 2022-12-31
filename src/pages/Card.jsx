@@ -1,12 +1,17 @@
+import { useState } from "react";
 import { Header } from "../components/Layout/Header";
 import { Footer } from "../components/Layout/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { products_array } from "../hooks/products_storage";
+import { cartLocalStorage, cartDeleteItem,cartAddItem,cartRemoveItem } from "../hooks/cart";
 
 export const Card = () => {
+  const [cartItems, setCartItem] = useState(cartLocalStorage())
   return (
     <>
       <Header />
+      {JSON.stringify(cartItems)}
 
       <div className="card">
         <div className="card-producto ">

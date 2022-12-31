@@ -6,6 +6,7 @@ import { products_array } from "../hooks/products_storage";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import { cartAddItem, addToCartLocalStorage } from "../hooks/cart";
 
 export const ProductGrid = () => {
   const MySwal = withReactContent(Swal);
@@ -31,6 +32,9 @@ export const ProductGrid = () => {
             <img className="category-card-img" src={item.image} alt="" />
             <button
               onClick={() => {
+                addToCartLocalStorage(
+                  item.id,1
+                )
                 MySwal.fire({
                   title: "Producto agregado al carrito",
                   text: "desea ir al carrito",
