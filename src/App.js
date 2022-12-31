@@ -40,7 +40,7 @@ function App() {
     },
 
     {
-      path: "/product",
+      path: "/product/:id",
       element: <Products />,
     },
 
@@ -49,8 +49,13 @@ function App() {
       element: <ProductGrid />,
     },
     {
-      path: "/card",
+      path: "/cart",
       element: <Card />,
+    },
+
+    {
+      path: "/category/:categoryName",
+      element: <ProductGrid />,
     },
   ]);
 

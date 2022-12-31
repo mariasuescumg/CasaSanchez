@@ -1,25 +1,36 @@
-import { useState } from "react";
-import SALSA from "../assets/image/productimage/salsa1.jpeg";
+import { useState, useEffect } from "react";
 import { Header } from "../components/Layout/Header";
 import { Footer } from "../components/Layout/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { useParams } from "react-router-dom";
+import { products_array } from "../hooks/products_storage";
 
 export const Products = () => {
   const [quant, setQuant] = useState(1);
+  const [product, setProduct] = useState({});
+  const { id } = useParams();
+
+  useEffect(() => {
+    const product_filtro = products_array.filter((item) => {
+      return item.id == id;
+    })[0];
+    setProduct(product_filtro);
+  }, []);
+
   return (
     <>
       <Header />
-      {quant}
+      {id}
       <div className="productos">
-        <img className="productos-img" src={SALSA} alt="salsa chile de arbol" />
-        <h2>CHILE DE ARBOL</h2>
+        <img className="productos-img" src={product.image} alt={product.title} />
+        <h2>{product.title}</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius dolores
           ab autem alias debitis explicabo illo voluptatem quibusdam cupiditate
           rem, iste dolorum nisi est! Numquam ipsam culpa impedit ad sed?
         </p>
-        <h1>$6.500 PCL</h1>
+        <h1>$ {product.price} CLP</h1>
 
         <div className="productos-agg">
           <button

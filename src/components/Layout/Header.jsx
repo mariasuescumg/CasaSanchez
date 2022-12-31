@@ -23,7 +23,7 @@ export const Header = () => {
             <li
               className="header-nav-items text-m"
               onClick={() => {
-                navigate("/gastronomia");
+                navigate("/category/gastronomia");
               }}
             >
               Gastronomia
@@ -31,7 +31,7 @@ export const Header = () => {
             <li
               className="header-nav-items text-m"
               onClick={() => {
-                navigate("/arte");
+                navigate("/category/arte");
               }}
             >
               Arte
@@ -39,7 +39,7 @@ export const Header = () => {
             <li
               className="header-nav-items text-m"
               onClick={() => {
-                navigate("/cultura");
+                navigate("/category/cultura");
               }}
             >
               Cultura
@@ -47,7 +47,7 @@ export const Header = () => {
             <li
               className="header-nav-items text-m"
               onClick={() => {
-                navigate("/contacto");
+                window.location = "https://wa.me/56932382987";
               }}
             >
               Contacto

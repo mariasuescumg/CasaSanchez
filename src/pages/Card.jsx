@@ -1,6 +1,5 @@
 import { Header } from "../components/Layout/Header";
 import { Footer } from "../components/Layout/Footer";
-import SALSA1 from "../assets/image/productimage/salsa1.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
@@ -11,7 +10,7 @@ export const Card = () => {
 
       <div className="card">
         <div className="card-producto ">
-          <img src={SALSA1} alt="" />
+          <img src={""} alt="" />
           <div className="card-producto-descripcion">
             <h3 className="text-xs">nombre del producto</h3>
             <h3 className="text-xs">$6.500clp</h3>
@@ -26,7 +25,7 @@ export const Card = () => {
           </div>
         </div>
         <div className="card-producto ">
-          <img src={SALSA1} alt="" />
+          <img src={""} alt="" />
           <div className="card-producto-descripcion">
             <h3 className="text-xs">nombre del producto</h3>
             <h3 className="text-xs">$6.500clp</h3>
@@ -42,7 +41,7 @@ export const Card = () => {
           
         </div>
         <div className="card-producto ">
-          <img src={SALSA1} alt="" />
+          <img src={""} alt="" />
           <div className="card-producto-descripcion">
             <h3 className="text-xs">nombre del producto</h3>
             <h3 className="text-xs">$6.500clp</h3>
@@ -57,7 +56,7 @@ export const Card = () => {
           </div>
         </div>
         <div className="card-producto ">
-          <img src={SALSA1} alt="" />
+          <img src={""} alt="" />
           <div className="card-producto-descripcion">
             <h3 className="text-xs">nombre del producto</h3>
             <h3 className="text-xs">$6.500clp</h3>
