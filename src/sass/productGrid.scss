@@ -1,15 +1,30 @@
 .category {
+  &-tittle{
+    text-align: center;
+    font-weight: 700;
+    padding: 10px;
+    color: white;
+  }
+
   &-grid {
     display: flex;
     flex-wrap: wrap;
     padding: 5% 25%;
     width: 100%;
     gap: 10%;
+
+    @media screen and (max-width: 758px) {
+      padding: 10%;
+    }
   }
 
   &-card {
     width: 45%;
     position: relative;
+
+    @media screen and (max-width: 758px) {
+      width: 100%;
+    }
 
     &-img {
       width: 100%;
@@ -28,15 +43,25 @@
     position: absolute;
     top: 2%;
     right: 5%;
+
   }
 
   &-link {
     transition: all 1s;
     cursor: pointer;
 
+
     &:hover {
       transform: scale(1.2);
       color: $vino;
     }
+
+  }
+  &-nombre{
+    color: $vino;
+  }
+
+  &-text{
+    font-size: 15px;
   }
 }

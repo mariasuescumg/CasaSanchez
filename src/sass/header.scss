@@ -1,14 +1,18 @@
 .header{
   display: flex;
   align-items: center;
-  padding: 25px 50px;  
-  
-  @media (max-width:750px) {
-    display: none;
+  padding: 25px 50px;
+  @media screen and (max-width: 768px) {
+    justify-content: space-between;
   }
+
 
   &-logo {
     width: 10%;
+    @media screen and (max-width: 768px) {
+      width: 20%;
+    }
+
   }
 
   &-nav {
@@ -16,22 +20,90 @@
     width: 80%;
     display: flex;
     justify-content: center;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
 
     &-list {
       list-style: none;
       display: flex;
       gap: 40px;
+      flex-wrap: wrap;
       border-bottom: $negro solid 1px;
       padding-bottom: 10px;
+      justify-content: center;
+
+      @media screen and (max-width: 768px) {
+        gap: 10px 55px;
+        border-bottom: #000000 solid 1px;
+        padding-bottom: 10px;
+      }
       
     }
 
     &-items {
       cursor: pointer;
+      @media screen and (max-width: 768px) {
+        font-size: 12px;
+      }
     }
   }
 
   &-cart {
     width: 10%;
+  }
+}
+
+.sidebar-mobile{
+  position: fixed;
+  width: 90%;
+  height: 100vh;
+  left: -200%;
+  top: 0;
+  background: #fff;
+  z-index: 999;
+  transition: all ease-in-out .5s;
+
+
+  &.opened{
+    left: 0%;
+  }
+
+  .logomobile{
+   & img{
+      width: 100px;
+    }
+    
+  }
+  .header-nav-list{
+
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 80vh;
+    padding: 0 30px;
+    border-bottom: none;
+    & li{
+      font-size: 24px;
+    }
+
+  }
+ .sidebar-close{
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-left: 30px;
+  margin-top: 30px;
+
+ }
+  
+}
+
+.sidebar-open{
+  background: transparent;
+  border: none;
+  outline: none;
+  @media screen and (min-width: 768px) {
+    display: none
   }
 }

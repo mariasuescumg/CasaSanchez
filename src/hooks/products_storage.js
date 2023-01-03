@@ -1,3 +1,5 @@
+// creacion archivo json para la data de los productos con categoria, id, precio e imagen
+
 export const products_list = {
   gastronomia: [
     {
@@ -60,7 +62,7 @@ export const products_list = {
       category: "arte",
       title: "Alebrije en forma de pez..",
       price: 8500,
-      image: "/image/productimage/ao7.jpeg",
+      image: "/image/productimage/Tenango4.jpg",
       descripcion: "",
     },
 
@@ -317,7 +319,7 @@ export const products_array = [
     category: "arte",
     title: "Alebrije en forma de pez",
     price: 8500,
-    image: "/image/productimage/ao07.jpeg",
+    image: "/image/productimage/ao7.jpeg",
     descripcion: "",
   },
 
@@ -326,7 +328,7 @@ export const products_array = [
     category: "arte",
     title: "Alebrije en forma de rana",
     price: 8500,
-    image: "/image/productimage/aros16.jpg",
+    image: "/image/productimage/ao16.jpeg",
     descripcion: "",
   },
 
@@ -335,7 +337,7 @@ export const products_array = [
     category: "arte",
     title: "Alebrije en forma de búho",
     price: 8500,
-    image: "/image/productimage/aros19.jpg",
+    image: "/image/productimage/ao19.jpeg",
     descripcion: "",
   },
 

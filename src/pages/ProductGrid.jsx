@@ -6,7 +6,7 @@ import { products_array } from "../hooks/products_storage";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import { cartAddItem, addToCartLocalStorage } from "../hooks/cart";
+import { addToCartLocalStorage } from "../hooks/cart";
 
 export const ProductGrid = () => {
   const MySwal = withReactContent(Swal);
@@ -22,19 +22,29 @@ export const ProductGrid = () => {
 
   const navigate = useNavigate();
 
+  const formatter = new Intl.NumberFormat("es-CL", {
+    style: "currency",
+    currency: "CLP",
+    minimumFractionDigits: 0,
+  });
+
   return (
     <>
       <Header />
-      <div className=" category-tittle background-rosado ">Salsa</div>
+      <div className=" category-tittle background-rosado ">{categoryName.toUpperCase()}</div>
       <div className="category-grid">
+        {/** se le pone .map para recorrer los elementos del array */}
         {category.map((item) => (
           <div className="category-card">
             <img className="category-card-img" src={item.image} alt="" />
             <button
               onClick={() => {
+                {/**se llama a la funcion addToCartLocalStorage  que pertenece al hook cart para agregar un elemento al carrito  pasandole el id del producto de uno en uno*/}
                 addToCartLocalStorage(
                   item.id,1
                 )
+
+                {/** se usa el alert para que el cliente decida si sigue en la grid para escojer mas productos  o lo lleva a la page del carrito con los productos seleccionados */}
                 MySwal.fire({
                   title: "Producto agregado al carrito",
                   text: "desea ir al carrito",
@@ -59,9 +69,11 @@ export const ProductGrid = () => {
                 navigate(`/product/${item.id}`);
               }}
             >
-              <h5>SALSA</h5>
-              <h4>{item.title}</h4>
-              <h3>$ {item.price} CLP</h3>
+              {/** se usa el .toUpperCase para que la categoria se muestre en mayuscula */}
+              <h5 className="category-nombre">{categoryName.toUpperCase()}</h5>
+              {/** se renderiza el titulo del producto y el precio utilizando la funcion para darle format*/}
+              <h4 className="text-product">{item.title}</h4>
+              <h3>{formatter.format(item.price)} CLP</h3>
             </span>
           </div>
         ))}

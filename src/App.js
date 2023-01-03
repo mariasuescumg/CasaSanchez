@@ -1,11 +1,7 @@
 import { Index } from "./pages/Index";
-import { Gastronomia } from "./pages/Gastronomia";
-import { Cultura } from "./pages/Cultura";
-import { Arte } from "./pages/Arte";
-import { Contacto } from "./pages/Contacto";
 import { Products } from "./pages/Products";
 import { ProductGrid } from "./pages/ProductGrid";
-import { Card } from "./pages/Card";
+import { Cart } from "./pages/Cart";
 import "./sass/index.scss";
 import {
   createBrowserRouter,
@@ -19,25 +15,6 @@ function App() {
       path: "/",
       element: <Index />,
     },
-    {
-      path: "/gastronomia",
-      element: <Gastronomia />,
-    },
-
-    {
-      path: "/cultura",
-      element: <Cultura />,
-    },
-
-    {
-      path: "/arte",
-      element: <Arte />,
-    },
-
-    {
-      path: "/contacto",
-      element: <Contacto />,
-    },
 
     {
       path: "/product/:id",
@@ -45,12 +22,8 @@ function App() {
     },
 
     {
-      path: "/productgrid",
-      element: <ProductGrid />,
-    },
-    {
       path: "/cart",
-      element: <Card />,
+      element: <Cart />,
     },
 
     {

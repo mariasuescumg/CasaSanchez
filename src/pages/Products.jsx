@@ -11,12 +11,13 @@ import withReactContent from "sweetalert2-react-content";
 import { useNavigate } from "react-router-dom";
 
 export const Products = () => {
-  const MySwal = withReactContent(Swal);
-  const [quant, setQuant] = useState(1);
-  const [product, setProduct] = useState({});
-  const { id } = useParams();
-  const navigate = useNavigate();
+  const MySwal = withReactContent(Swal);// instancia para el uso del sweetalert
+  const [quant, setQuant] = useState(1);// state de la cantidad de seleccion para agg al carrito
+  const [product, setProduct] = useState({});// state donde se almacenan la info del producto basado en el id 
+  const { id } = useParams();// se trae un parametro de la url en este caso el id del producto
+  const navigate = useNavigate();// nos ayuda a navegar en otras rutas 
 
+  // filtra el producto que este idetificado con el id que este en el parametro de la url
   useEffect(() => {
     const product_filtro = products_array.filter((item) => {
       return item.id == id;
@@ -24,19 +25,27 @@ export const Products = () => {
     setProduct(product_filtro);
   }, []);
 
+// constate para formatear y ponerle punto al price esta funcion  funcion copiada de https://www.tutofox.com/javascript/como-convertir-valor-a-formato-moneda-en-javascript/
+  const formatter = new Intl.NumberFormat("es-CL", {
+    style: "currency",
+    currency: "CLP",
+    minimumFractionDigits: 0,
+  });
+
   return (
     <>
       <Header />
-      {id}
+      {/** informacion traida del archivo json creador products_storage.js */}
       <div className="productos">
         <img className="productos-img" src={product.image} alt={product.title} />
         <h2>{product.title}</h2>
+        {/** Descripcion del producto pendiente por el enviar el cliente */}
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius dolores
           ab autem alias debitis explicabo illo voluptatem quibusdam cupiditate
           rem, iste dolorum nisi est! Numquam ipsam culpa impedit ad sed?
         </p>
-        <h1>$ {product.price} CLP</h1>
+        <h1>{formatter.format(product.price)}CLP</h1>
 
         <div className="productos-agg">
           <button

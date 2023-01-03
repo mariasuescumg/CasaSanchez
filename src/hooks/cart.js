@@ -1,3 +1,5 @@
+//  hook para funcionamiento de carrito y localStorage
+
 /**
  *
  * @returns {array} Cart
@@ -9,13 +11,14 @@ export const cartLocalStorage = () => {
 
 /**
  *
- * @param index : The index of the cart column to delete 1 quantity
+ * @param index : The index of the cart column to delete all
  */
 export const cartDeleteItem = (index) => {
   const cart = localStorage.getItem("cart");
   let arrayCart = JSON.parse(cart);
-  const removed = arrayCart.splice(index, 1);
-  localStorage.setItem("cart", JSON.stringify(removed));
+  arrayCart.splice(index, 1);
+
+  localStorage.setItem("cart", JSON.stringify(arrayCart));
 };
 
 /**
@@ -25,18 +28,18 @@ export const cartDeleteItem = (index) => {
 export const cartAddItem = (index) => {
   const cart = localStorage.getItem("cart");
   let arrayCart = JSON.parse(cart);
-  arrayCart[index].quant++;
+  arrayCart[index].quant = arrayCart[index].quant+1;
   localStorage.setItem("cart", JSON.stringify(arrayCart));
 };
 
 /**
  *
- * @param index : thethe index of the cart column to remove it
+ * @param index : the index of the cart column to remove it
  */
 export const cartRemoveItem = (index) => {
   const cart = localStorage.getItem("cart");
   let arrayCart = JSON.parse(cart);
-  arrayCart[index].quant--;
+  arrayCart[index].quant = arrayCart[index].quant-1;
   localStorage.setItem("cart", JSON.stringify(arrayCart));
 };
 

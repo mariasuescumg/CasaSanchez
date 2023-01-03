@@ -1,4 +1,5 @@
 import React from "react";
+//importo las img del logo y las redes sociales
 import LogoCS from "../../assets/image/logo-cs.png";
 import FC from "../../assets/image/Facebook.png";
 import IG from "../../assets/image/Instagram.png";

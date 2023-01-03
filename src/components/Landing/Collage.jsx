@@ -2,7 +2,7 @@ import React from "react";
 import Collage1 from "../../assets/image/collage1.jpg";
 import Collage2 from "../../assets/image/collage2.jpg";
 import Collage3 from "../../assets/image/collage3.jpg";
-
+// se importan los elementos necesarios para la creacion del collage 
 export default function Collage() {
   return (
     <div className="collage container">
@@ -13,10 +13,7 @@ export default function Collage() {
         <div className="collage-text background-rosado ">
           <h3> Arte</h3>
           <p className="text-s">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad saepe
-            commodi voluptatem cupiditate repudiandae, laboriosam nisi,
-            blanditiis aliquid iusto ratione nulla minus, id provident laborum.
-            Quaerat id optio tenetur porro.
+          Compuesto por creencias, supersticiones y tradiciones, fabricadas manualmente con la produccion artesanal caracaterizados por temas esteticos y comunicativos.
           </p>
         </div>
       </div>
@@ -26,10 +23,7 @@ export default function Collage() {
         <div className="collage-text background-verde ">
           <h3> Gastronomia</h3>
           <p className="text-s">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad saepe
-            commodi voluptatem cupiditate repudiandae, laboriosam nisi,
-            blanditiis aliquid iusto ratione nulla minus, id provident laborum.
-            Quaerat id optio tenetur porro.
+          Técnicas culinarias de México que forman parte de las tradiciones y vida común de sus habitantes, enriquecida por las aportaciones de las distintas regiones del país.
           </p>
         </div>
         <div className="collage-img">
@@ -44,10 +38,7 @@ export default function Collage() {
         <div className="collage-text background-rosado ">
           <h3>Cultura</h3>
           <p className="text-s">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad saepe
-            commodi voluptatem cupiditate repudiandae, laboriosam nisi,
-            blanditiis aliquid iusto ratione nulla minus, id provident laborum.
-            Quaerat id optio tenetur porro.
+          Es una combinación de varias culturas, desde la española que llegó con la Conquista, las diversas culturas del México prehispánico e incluso algunos elementos de las culturas africanas que llegaron a ciertas regiones al ser traídas como esclavos.
           </p>
         </div>
       </div>
