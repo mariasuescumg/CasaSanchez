@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
 import { products_array } from "../hooks/products_storage";
-import { cartAddItem, addToCartLocalStorage } from "../hooks/cart";
+import { addToCartLocalStorage } from "../hooks/cart";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useNavigate } from "react-router-dom";
@@ -20,10 +20,10 @@ export const Products = () => {
   // filtra el producto que este idetificado con el id que este en el parametro de la url
   useEffect(() => {
     const product_filtro = products_array.filter((item) => {
-      return item.id == id;
+      return item.id === id;
     })[0];
     setProduct(product_filtro);
-  }, []);
+  }, [id]);
 
 // constate para formatear y ponerle punto al price esta funcion  funcion copiada de https://www.tutofox.com/javascript/como-convertir-valor-a-formato-moneda-en-javascript/
   const formatter = new Intl.NumberFormat("es-CL", {

@@ -14,7 +14,7 @@ export const ProductGrid = () => {
   const [category, setCategory] = useState([]);
   useEffect(() => {
     const category_filtro = products_array.filter((item) => {
-      return item.category == categoryName;
+      return item.category === categoryName;
     });
     setCategory(category_filtro);
     console.log(category_filtro);
@@ -39,12 +39,12 @@ export const ProductGrid = () => {
             <img className="category-card-img" src={item.image} alt="" />
             <button
               onClick={() => {
-                {/**se llama a la funcion addToCartLocalStorage  que pertenece al hook cart para agregar un elemento al carrito  pasandole el id del producto de uno en uno*/}
+                /**se llama a la funcion addToCartLocalStorage  que pertenece al hook cart para agregar un elemento al carrito  pasandole el id del producto de uno en uno*/
                 addToCartLocalStorage(
                   item.id,1
                 )
 
-                {/** se usa el alert para que el cliente decida si sigue en la grid para escojer mas productos  o lo lleva a la page del carrito con los productos seleccionados */}
+                /** se usa el alert para que el cliente decida si sigue en la grid para escojer mas productos  o lo lleva a la page del carrito con los productos seleccionados */
                 MySwal.fire({
                   title: "Producto agregado al carrito",
                   text: "desea ir al carrito",

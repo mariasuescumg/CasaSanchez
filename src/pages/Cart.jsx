@@ -13,7 +13,6 @@ import {
 
 export const Cart = () => {
   const [cartItems, setCartItem] = useState(cartLocalStorage());
-  const [total, setTotal] = useState(0);
   const reloadCart = () => {
     setCartItem(cartLocalStorage);
   };
@@ -35,7 +34,7 @@ export const Cart = () => {
         {cartItems.map((item, index) => {
           // como en el localstorage solo se guarda el id del producto, debemos hacer un filtrado de los productos basado en el id en el que estoy actualmente
           const product = products_array.filter((p) => {
-            return p.id == item.id;
+            return p.id === item.id;
           })[0];
           const product_price = ( product.price * item.quant);
           
@@ -92,7 +91,7 @@ export const Cart = () => {
 
             cartItems.forEach((item, index) => {
               const product = products_array.filter((p) => {
-                return p.id == item.id;
+                return p.id === item.id;
               })[0];
 
               productosList += `- ${item.quant} ${
