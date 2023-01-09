@@ -24,14 +24,12 @@ export const Cart = () => {
     minimumFractionDigits: 0,
   });
 
-  
-
   return (
     <>
       <Header />
 
       <div className="card">
-        {cartItems.map((item, index) => {
+      { cartItems.length > 1 &&  cartItems.map((item, index) => {
           // como en el localstorage solo se guarda el id del producto, debemos hacer un filtrado de los productos basado en el id en el que estoy actualmente
           const product = products_array.filter((p) => {
             return p.id === item.id;
