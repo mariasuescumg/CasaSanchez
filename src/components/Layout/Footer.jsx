@@ -17,7 +17,7 @@ export const Footer = () => {
                 window.location = "https://instagram.com/casasanchez.cl?igshid=OGQ2MjdiOTE=";
               }} className="footer-redes__ico" src={IG} alt="Instagram" />
           <img onClick={() => {
-                window.location = "https://wa.me/56932382987";
+                window.location = "https://wa.me/56937559270";
               }} className="footer-redes__ico" src={WP} alt="Whatsapp" />
         </div>
       </div>

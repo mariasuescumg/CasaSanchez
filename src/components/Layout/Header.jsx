@@ -114,7 +114,7 @@ export const Header = () => {
             <li
               className="header-nav-items text-m"
               onClick={() => {
-                window.location = "https://wa.me/56932382987";
+                window.location = "https://wa.me/56937559270";
               }}
             >
               Contacto

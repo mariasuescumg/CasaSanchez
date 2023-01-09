@@ -102,9 +102,9 @@ export const Cart = () => {
               precio_total += (item.quant * product.price);
             });
 
-            let text = `*Hola, quiero hacer un pedido de:*${salto}${productosList}${salto} *Total a pagar: ${formatter.format(precio_total) }*`;
+            let text = `*Hola Casa Sanchez, quiero hacer un pedido de:*${salto}${productosList}${salto} *Total a pagar: ${formatter.format(precio_total) }*`;
 
-            window.location = `https://wa.me/56932382987?text=${text}`;
+            window.location = `https://wa.me/56937559270?text=${text}`;
           }}
           className="text-s text-bold-500 background-verde card-producto-buy"
         >
