@@ -84,7 +84,6 @@ export const Cart = () => {
        
         <button
           onClick={() => {
-            const es = "%20";
             const salto = "%0A";
             let precio_total = 0;
             let productosList = "";
