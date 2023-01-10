@@ -12,11 +12,11 @@ import {
 } from "../hooks/cart";
 
 export const Cart = () => {
-  const [cartItems, setCartItem] = useState(cartLocalStorage());
+  const [cartItems, setCartItem] = useState(cartLocalStorage() || []);
   const reloadCart = () => {
     setCartItem(cartLocalStorage);
   };
- 
+
   // funcion copiada de https://www.tutofox.com/javascript/como-convertir-valor-a-formato-moneda-en-javascript/
   const formatter = new Intl.NumberFormat("es-CL", {
     style: "currency",
@@ -29,13 +29,13 @@ export const Cart = () => {
       <Header />
 
       <div className="card">
-      { cartItems.length > 1 &&  cartItems.map((item, index) => {
+        {cartItems.map((item, index) => {
           // como en el localstorage solo se guarda el id del producto, debemos hacer un filtrado de los productos basado en el id en el que estoy actualmente
           const product = products_array.filter((p) => {
             return p.id === item.id;
           })[0];
-          const product_price = ( product.price * item.quant);
-          
+          const product_price = product.price * item.quant;
+
           return (
             <div className="card-producto">
               <img src={product.image} alt="" />
@@ -43,8 +43,12 @@ export const Cart = () => {
                 <h3 className="text-s">{product.title}</h3>
                 <hr />
                 <br />
-                <h3 className="text-xs">Unidad : {formatter.format(product.price)}</h3>
-                <h3 className="text-xs">Total : {formatter.format(product_price)}</h3>
+                <h3 className="text-xs">
+                  Unidad : {formatter.format(product.price)}
+                </h3>
+                <h3 className="text-xs">
+                  Total : {formatter.format(product_price)}
+                </h3>
               </div>
               <div className="card-producto-trash">
                 <FontAwesomeIcon
@@ -79,7 +83,7 @@ export const Cart = () => {
             </div>
           );
         })}
-       
+
         <button
           onClick={() => {
             const salto = "%0A";
@@ -95,10 +99,12 @@ export const Cart = () => {
                 product.title
               }  ${formatter.format(item.quant * product.price)}CLP ${salto}`;
 
-              precio_total += (item.quant * product.price);
+              precio_total += item.quant * product.price;
             });
 
-            let text = `*Hola Casa Sanchez, quiero hacer un pedido de:*${salto}${productosList}${salto} *Total a pagar: ${formatter.format(precio_total) }*`;
+            let text = `*Hola Casa Sanchez, quiero hacer un pedido de:*${salto}${productosList}${salto} *Total a pagar: ${formatter.format(
+              precio_total
+            )}*`;
 
             window.location = `https://wa.me/56937559270?text=${text}`;
           }}
